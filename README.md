@@ -17,6 +17,7 @@ The Python code does **not** reimplement the YAeHMOP Hamiltonian. It prepares YA
 - CIF input through ASE.
 - Raster band-image digitization with continuity-aware reconstruction through crossings and degeneracies.
 - Full-spectrum fitting or **frontier-only fitting** with `--fit-window EMIN EMAX`.
+- **Shared multi-system fitting** for transferable element parameters, with held-out train/test roles defined in YAML.
 - Explicit gap penalty and regularization toward tabulated YAeHMOP atomic parameters.
 - Reproducible MoS2 example (`Gamma-M-K-Gamma`).
 - Standalone EHT band runner producing CSV and PNG output.
@@ -86,6 +87,7 @@ See **[DFT software workflows](docs/DFT_SOFTWARE_GUIDE.md)** and **[image requir
 - [Image reference requirements](docs/IMAGE_REFERENCE_GUIDE.md)
 - [VASP / Quantum ESPRESSO / SIESTA workflows](docs/DFT_SOFTWARE_GUIDE.md)
 - [Parameter-file format](docs/PARAMETER_FORMAT.md)
+- [Shared multi-system fitting and graphene-vacancy example](paper_benchmark/SHARED_FITTING.md)
 - [Reproducibility and validation](docs/REPRODUCIBILITY.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Project roadmap](docs/ROADMAP.md)

@@ -1,0 +1,68 @@
+# Example shared fit for graphene with vacancies.
+# Replace every structure/reference path and every reciprocal-space path with
+# the values appropriate to your own supercells before running a real fit.
+shared:
+  fit_window: [-2.0, 2.0]
+  gap_weight: 0.0
+  reg_weight: 0.20
+  points_per_line: 30
+  trace_nx: 401
+  seed: 20260928
+  # Optional warm start from independent fit_eht_v2.py result JSON files:
+  # initial_results:
+  #   - graphene/pristine/results/pristine.json
+  #   - graphene/1V/results/one_vacancy.json
+  #   - graphene/2V/results/two_vacancies.json
+  optimizer:
+    shape_maxiter: 4
+    hii_maxiter: 4
+    popsize: 3
+    shape_local_maxiter: 90
+    hii_local_maxiter: 110
+    joint_maxiter: 180
+    joint_maxfev: 700
+
+systems:
+  - name: graphene_pristine
+    role: train
+    weight: 1.0
+    structure: graphene/pristine/structure.cif
+    reference: graphene/pristine/band.png
+    emin: -8.0
+    emax: 8.0
+    point_dim: 2
+    symmetry_points: [[0.0, 0.0], [0.5, 0.0], [0.3333333333, 0.3333333333], [0.0, 0.0]]
+    labels: [G, M, K, G]
+
+  - name: graphene_1V
+    role: train
+    weight: 1.0
+    structure: graphene/1V/structure.cif
+    reference: graphene/1V/band.png
+    emin: -8.0
+    emax: 8.0
+    point_dim: 2
+    symmetry_points: [[0.0, 0.0], [0.5, 0.0], [0.3333333333, 0.3333333333], [0.0, 0.0]]
+    labels: [G, M, K, G]
+
+  - name: graphene_2V
+    role: train
+    weight: 1.0
+    structure: graphene/2V/structure.cif
+    reference: graphene/2V/band.png
+    emin: -8.0
+    emax: 8.0
+    point_dim: 2
+    symmetry_points: [[0.0, 0.0], [0.5, 0.0], [0.3333333333, 0.3333333333], [0.0, 0.0]]
+    labels: [G, M, K, G]
+
+  - name: graphene_3V
+    role: test
+    weight: 1.0
+    structure: graphene/3V/structure.cif
+    reference: graphene/3V/band.png
+    emin: -8.0
+    emax: 8.0
+    point_dim: 2
+    symmetry_points: [[0.0, 0.0], [0.5, 0.0], [0.3333333333, 0.3333333333], [0.0, 0.0]]
+    labels: [G, M, K, G]
