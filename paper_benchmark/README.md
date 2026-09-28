@@ -50,6 +50,12 @@ python band_runner/huckel_yaehmop.py \
   --point-dim 2 --labels G M K G --nkpoints 401
 ```
 
+## Generic shared-parameter fitting
+
+The repository now includes `parameter_fitter/fit_shared.py`, a generic multi-system version of the shared-parameter strategy used in the paper's 2H-TMD cross-validation experiment. It fits one common set of atomic YAeHMOP parameters and one shared `K` to multiple training systems, and can evaluate held-out `role: test` systems without refitting.
+
+See [SHARED_FITTING.md](SHARED_FITTING.md) for the full workflow and the ready-to-edit [graphene-vacancy YAML example](examples/graphene_vacancies_shared.yaml).
+
 ## Reproducing the aggregate analysis
 
 The lightweight result tables are sufficient to reproduce the main benchmark statistics and most summary figures without downloading the original DFT archives:
