@@ -1,0 +1,3 @@
+fit,n_fits,n_parameters,within_2pct,within_0_2pct,fits_with_any_near_bound
+full,28,280,19,9,14
+nogap,28,280,22,10,16

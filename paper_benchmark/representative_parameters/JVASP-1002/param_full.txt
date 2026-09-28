@@ -1,0 +1,8 @@
+# Numerical-DFT-fitted YAeHMOP parameters
+K = 1.3247748356054
+WEIGHTED_HIJ = true
+
+; Generic YAeHMOP parameter file
+SI    14     4     1     3  s -18.294258   1.898669   0.000000   1.000000   0.000000
+SI    14     4     1     3  p -12.270456   1.497304   0.000000   1.000000   0.000000
+END

@@ -107,6 +107,20 @@ The setup scripts build YAeHMOP from:
 
 YAeHMOP remains under its upstream license; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
+## Paper benchmark and Physical Review Materials manuscript
+
+The repository now includes a lightweight [`paper_benchmark/`](paper_benchmark/) package containing the publication-facing analysis for the 20-material C2DB benchmark, the 8-solid JARVIS-DFT benchmark, and the 2H-TMD shared-parameter cross-validation study.
+
+It includes aggregate CSV/JSON results, figure-regeneration scripts, source manifests, and representative fitted parameter sets for MoS2, h-BN, Si, and MgO. Bulky raw DFT archives, optimizer scratch directories, static publication binaries, and the still-author-placeholder manuscript source are intentionally excluded.
+
+Quick integrity check:
+
+```bash
+python paper_benchmark/scripts/check_results.py
+```
+
+See [`paper_benchmark/README.md`](paper_benchmark/README.md) for the benchmark protocol, central metrics, representative parameter files, and reproducibility notes.
+
 ## Repository status
 
 This repository is an actively developed research codebase. Reproducibility information and known limitations are documented explicitly so that fitted parameters are not confused with universally transferable atomic parameters.
