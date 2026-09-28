@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install system build tools
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+      - name: Install Python dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
+      - name: Build YAeHMOP
+        run: |
+          ./scripts/install_yaehmop.sh "$PWD/band_runner/yaehmop"
+          ./scripts/install_yaehmop.sh "$PWD/parameter_fitter/yaehmop"
+      - name: Compile Python sources
+        run: python -m py_compile band_runner/*.py parameter_fitter/*.py tests/*.py
+      - name: Run fast tests
+        run: pytest -q
+      - name: Run optimizer regression
+        env:
+          RUN_SLOW_FIT: "1"
+        run: pytest -q tests/test_parameter_fitter_slow.py
