@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a reproducible problem with fitting or band calculation
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problem summary
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and relevant output
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: Ubuntu 24.04, Python 3.11, x86_64
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Input/reference details
+      description: CIF source, image energy range, k-path, spin/SOC status, and DFT code if relevant.
